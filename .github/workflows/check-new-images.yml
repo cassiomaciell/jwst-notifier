@@ -1,0 +1,25 @@
+name: Check New Images
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 16 * * *'
+
+jobs:
+  check-in:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - run: node dist/index.js
+        env:
+          DISCORD_WEBHOOK_ID: ${{ secrets.DISCORD_WEBHOOK_ID }}
+          DISCORD_WEBHOOK_TOKEN: ${{ secrets.DISCORD_WEBHOOK_TOKEN }}
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          DISCORD_MENTION_ROLE_ID: ${{ secrets.DISCORD_MENTION_ROLE_ID }}
+          WEBB_BASE_URL: ${{ vars.WEBB_BASE_URL }}
+          WEBB_IMAGES_URL: ${{ vars.WEBB_IMAGES_URL }}

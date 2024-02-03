@@ -1,0 +1,9 @@
+{
+	"apkPath": "D:/Projects/Veek/Veek.apk",
+	"apkDownloadUrl": "https://d.apkpure.net/b/APK/br.com.veek.app?version=latest",
+	"authorization": "Bearer 1GJ1zGamBOKJfpRaZIvJUB7B14hnOZUwACnVXH9pO6hKGUR4UmJrmitZUuNEuHNTs",
+	"okHttpFileName": "classes4.dex",
+	"okHttpVersionRegex": "okhttp/(\\d+\\.\\d+\\.\\d+)",
+	"updateFrequency": "2 days",
+	"apkLastUpdated": 1706070546126
+}

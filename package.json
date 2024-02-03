@@ -1,0 +1,25 @@
+{
+	"name": "jwst-notifier",
+	"version": "1.0.0",
+	"main": "./dist/index.js",
+	"scripts": {
+		"build": "esbuild ./src/index.ts --bundle --platform=node --minify --outfile=dist/index.js",
+		"generate-crons": "node ./scripts/generate-crons.js",
+		"dev": "tsx ./src/index.ts"
+	},
+	"keywords": [],
+	"author": "Cassio A. Maciel",
+	"license": "MIT",
+	"devDependencies": {
+		"@types/node": "^20.11.5",
+		"esbuild": "^0.19.12",
+		"tsx": "^4.7.0",
+		"typescript": "^5.3.3"
+	},
+	"dependencies": {
+		"discord.js": "^14.14.1",
+		"dotenv": "^16.4.0",
+		"mongoose": "^8.1.1",
+		"puppeteer-core": "^21.11.0"
+	}
+}
