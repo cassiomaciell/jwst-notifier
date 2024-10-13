@@ -21,7 +21,7 @@ const Image = mongoose.model<IImage>('Image', imageSchema);
 
 async function checkImages() {
 	const browser = await puppeteer.launch({
-		headless: 'new',
+		headless: true,
 		channel: 'chrome',
 	});
 	
@@ -89,6 +89,7 @@ function chunkArray<T>(arr: T[], chunkSize: number): T[][] {
 		mongoose.disconnect();
 	} catch (error) {
 		mongoose.disconnect();
+		console.error(error);
 		throw error;
 	}
 })();
